@@ -1,308 +1,96 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Karla Grisel Couoh Suaste | Ingeniera en Sistemas</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
-            color: #333;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 20px;
-        }
-
-        .container {
-            background: white;
-            border-radius: 20px;
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
-            overflow: hidden;
-            max-width: 900px;
-            width: 100%;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 0;
-        }
-
-        .photo-section {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 40px;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .photo-frame {
-            width: 280px;
-            height: 280px;
-            border-radius: 20px;
-            background: rgba(255, 255, 255, 0.1);
-            border: 3px solid white;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            position: relative;
-            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
-        }
-
-        .photo-placeholder {
-            width: 100%;
-            height: 100%;
-            border-radius: 17px;
-            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 80px;
-            color: white;
-        }
-
-        .photo-placeholder img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            border-radius: 17px;
-        }
-
-        .content-section {
-            padding: 60px 40px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-        }
-
-        .header {
-            margin-bottom: 30px;
-        }
-
-        .name {
-            font-size: 2.5em;
-            font-weight: 700;
-            color: #2d3748;
-            margin-bottom: 10px;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
-        .title {
-            font-size: 1.3em;
-            color: #667eea;
-            font-weight: 600;
-            margin-bottom: 20px;
-        }
-
-        .subtitle {
-            font-size: 0.95em;
-            color: #666;
-            font-style: italic;
-            margin-bottom: 30px;
-        }
-
-        .divider {
-            width: 60px;
-            height: 4px;
-            background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
-            margin-bottom: 30px;
-            border-radius: 2px;
-        }
-
-        .description {
-            font-size: 1em;
-            color: #4a5568;
-            line-height: 1.8;
-            margin-bottom: 30px;
-            text-align: justify;
-        }
-
-        .highlights {
-            display: flex;
-            flex-direction: column;
-            gap: 12px;
-            margin-top: 20px;
-        }
-
-        .highlight-item {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            font-size: 0.95em;
-            color: #2d3748;
-        }
-
-        .highlight-icon {
-            width: 24px;
-            height: 24px;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-weight: bold;
-            flex-shrink: 0;
-        }
-
-        .cta-buttons {
-            display: flex;
-            gap: 15px;
-            margin-top: 35px;
-            flex-wrap: wrap;
-        }
-
-        .btn {
-            padding: 12px 28px;
-            border: none;
-            border-radius: 8px;
-            font-size: 0.95em;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            text-decoration: none;
-            display: inline-block;
-            text-align: center;
-        }
-
-        .btn-primary {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            box-shadow: 0 5px 20px rgba(102, 126, 234, 0.4);
-        }
-
-        .btn-primary:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 8px 30px rgba(102, 126, 234, 0.6);
-        }
-
-        .btn-secondary {
-            border: 2px solid #667eea;
-            color: #667eea;
-            background: white;
-        }
-
-        .btn-secondary:hover {
-            background: #667eea;
-            color: white;
-            transform: translateY(-2px);
-        }
-
-        @media (max-width: 768px) {
-            .container {
-                grid-template-columns: 1fr;
-            }
-
-            .photo-section {
-                padding: 40px 20px;
-                order: -1;
-            }
-
-            .content-section {
-                padding: 40px 30px;
-            }
-
-            .name {
-                font-size: 2em;
-            }
-
-            .title {
-                font-size: 1.1em;
-            }
-
-            .description {
-                font-size: 0.95em;
-            }
-
-            .photo-frame {
-                width: 240px;
-                height: 240px;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .container {
-                border-radius: 15px;
-            }
-
-            .content-section {
-                padding: 30px 20px;
-            }
-
-            .name {
-                font-size: 1.6em;
-            }
-
-            .title {
-                font-size: 1em;
-            }
-
-            .cta-buttons {
-                flex-direction: column;
-            }
-
-            .btn {
-                width: 100%;
-            }
-        }
-    </style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Karla Grisel Couoh Suaste — Landing</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body {
+      background: linear-gradient(135deg,#667eea 0%,#764ba2 100%);
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      padding: 40px 16px;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+    .card-hero {
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 20px 60px rgba(0,0,0,.25);
+    }
+    .photo-box {
+      background: linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0.03));
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      min-height: 320px;
+    }
+    .photo-frame {
+      width: 260px;
+      height: 260px;
+      border-radius: 16px;
+      overflow: hidden;
+      border: 4px solid rgba(255,255,255,0.12);
+      background: linear-gradient(135deg,#f093fb,#f5576c);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      box-shadow: 0 8px 30px rgba(0,0,0,0.25);
+    }
+    .photo-frame img { width:100%; height:100%; object-fit:cover; }
+    .name-gradient {
+      background: linear-gradient(90deg,#667eea,#764ba2);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      font-weight:700;
+    }
+    .divider { width:72px; height:5px; border-radius:4px; background:linear-gradient(90deg,#667eea,#764ba2); }
+    @media (max-width:767px){ .photo-box{min-height:240px} .photo-frame{width:200px;height:200px} }
+  </style>
 </head>
 <body>
-    <div class="container">
-        <div class="photo-section">
-            <div class="photo-frame">
-                <div class="photo-placeholder">
-                    📸
-                    <!-- Reemplaza esta línea con: <img src="tu-foto.jpg" alt="Karla"> -->
-                </div>
-            </div>
+  <div class="container">
+    <div class="card card-hero">
+      <div class="row g-0 align-items-stretch">
+        <div class="col-lg-5 photo-box p-4">
+          <div class="photo-frame">
+            <!-- Reemplaza el placeholder con tu imagen: -->
+            <!-- <img src="tu-foto.jpg" alt="Karla Grisel"> -->
+            <span class="text-white fs-1">📸</span>
+          </div>
         </div>
 
-        <div class="content-section">
-            <div class="header">
-                <h1 class="name">Karla Grisel Couoh Suaste</h1>
-                <p class="title">Ingeniera en Sistemas Computacionales</p>
-                <p class="subtitle">Profesional Técnico en Informática</p>
+        <div class="col-lg-7">
+          <div class="card-body p-5">
+            <h1 class="h2 name-gradient mb-2">Karla Grisel Couoh Suaste</h1>
+            <p class="text-muted mb-1">Estudiante de Ingeniería en Sistemas Computacionales</p>
+            <p class="text-muted small">Profesional Técnico en Informática</p>
+
+            <div class="my-3">
+              <div class="divider"></div>
             </div>
 
-            <div class="divider"></div>
+            <p class="text-secondary">Enfoque en el desarrollo de software y la creación de soluciones digitales que aporten valor a las personas. Mi formación combina fundamentos sólidos de ingeniería con habilidades prácticas en informática, lo que me permite analizar problemas, proponer soluciones y trabajar de manera eficiente en entornos tecnológicos.</p>
 
-            <p class="description">
-                Enfoque en el desarrollo de software y la creación de soluciones digitales que aporten valor a las personas. Mi formación combina fundamentos sólidos de ingeniería con habilidades prácticas en informática, lo que me permite analizar problemas, proponer soluciones y trabajar de manera eficiente en entornos tecnológicos.
-            </p>
+            <ul class="list-unstyled mt-4 mb-0">
+              <li class="mb-2"><span class="badge me-2" style="background:linear-gradient(90deg,#667eea,#764ba2);color:white;">✓</span> Desarrollo de software y soluciones digitales</li>
+              <li class="mb-2"><span class="badge me-2" style="background:linear-gradient(90deg,#667eea,#764ba2);color:white;">✓</span> Análisis y resolución de problemas</li>
+              <li class="mb-2"><span class="badge me-2" style="background:linear-gradient(90deg,#667eea,#764ba2);color:white;">✓</span> Trabajo eficiente en entornos tecnológicos</li>
+            </ul>
 
-            <div class="highlights">
-                <div class="highlight-item">
-                    <div class="highlight-icon">✓</div>
-                    <span>Desarrollo de software y soluciones digitales</span>
-                </div>
-                <div class="highlight-item">
-                    <div class="highlight-icon">✓</div>
-                    <span>Análisis y resolución de problemas</span>
-                </div>
-                <div class="highlight-item">
-                    <div class="highlight-icon">✓</div>
-                    <span>Trabajo eficiente en entornos tecnológicos</span>
-                </div>
+            <div class="mt-4 d-flex flex-wrap gap-2">
+              <a href="#contacto" class="btn btn-primary px-4 py-2" style="background:linear-gradient(90deg,#667eea,#764ba2); border:none;">Contacto</a>
+              <a href="#portafolio" class="btn btn-outline-light px-4 py-2" style="color:#2c3e50; border-color: rgba(0,0,0,0.08);">Ver portafolio</a>
             </div>
-
-            <div class="cta-buttons">
-                <button class="btn btn-primary">Contacto</button>
-                <button class="btn btn-secondary">Portafolio</button>
-            </div>
+          </div>
         </div>
+      </div>
     </div>
+  </div>
+
+  <!-- Bootstrap JS (opcional para componentes interactivos) -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
